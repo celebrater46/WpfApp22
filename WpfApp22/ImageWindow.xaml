@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfApp22.ImageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp22"
+        mc:Ignorable="d"
+        Title="ImageWindow" Height="220" Width="200"
+        MinHeight="100" MinWidth="100"
+        ResizeMode="CanResizeWithGrip"
+        MouseWheel="Window_MouseWheel"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Window.Resources>
+        <Style TargetType="RepeatButton">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Width" Value="20"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <RepeatButton x:Name="plusButton" Content="+" Click="plusButton_Click"/>
+            <RepeatButton x:Name="minusButton" Content="-" Click="minusButton_Click"/>
+            <Button x:Name="closeButton" Content="Close" Margin="2" IsCancel="True" Click="closeButton_Click"/>
+        </StackPanel>
+        <Image x:Name="img" Grid.Row="1"/>
+    </Grid>
+</Window>

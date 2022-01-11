@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp22"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Image Viewer" Height="150" Width="450"
+        MinHeight="100" MinWidth="150"
+        ResizeMode="CanResizeWithGrip"
+        Closed="MainWindow_OnClosed">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Viewbox>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Open" IsDefault="True" Click="Open_OnClick"/>
+            <Button Content="Close all" Click="CloseAll_OnClick"/>
+        </StackPanel>
+    </Viewbox>
 </Window>
